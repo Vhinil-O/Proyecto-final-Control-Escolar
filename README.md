@@ -1,51 +1,40 @@
-# 🛒 Proyecto 2: Plataforma de Ventas en Línea (Mini eCommerce)
+# 🎓 Proyecto 3: Sistema de Control Escolar
 
-Las instrucciones para desarrollar son las siguientes:
-
-## 🛍️ Descripción
-
-Tienda en línea con catálogo de productos, carrito, gestión de usuarios y panel administrativo.
+## 🧩 Descripción
+Plataforma educativa para registrar alumnos, materias y calificaciones, con generación de reportes.
 
 ## 🎯 Objetivos
-- CRUD con subida de imágenes.
-- Carrito con LocalStorage y validación en servidor.
-- API REST interna.
-- Panel de ventas con gráficas y filtros.
-
+- Autenticación multirol (admin, docente, alumno).
+- CRUD completo con relaciones.
+- Reportes PDF y Dashboard con Chart.js.
+- Mensajería interna entre usuarios.
 ## ⚙️ Requerimientos
-- PHP, MySQL, Bootstrap, JS.
-- Tablas: `usuarios`, `productos`, `ordenes`, `detalles_orden`, `reseñas`.
-- Roles: Administrador, Cliente.
-- Reporte de ventas, reseñas y promedios.
-
+- Tablas: usuarios, materias, calificaciones, asistencias.
+- Roles: Administrador, Docente, Alumno.
+- Reporte semestral PDF o Excel.
 ## 📂 Estructura General
-
 ```
-ecommerce/
+control-escolar/
 ├── api/
-│   ├── productos.php
-│   ├── ordenes.php
-│   └── usuarios.php
-├── admin/
-│   ├── productos.php
-│   ├── ventas.php
-│   └── dashboard.php
+│   ├── alumnos.php
+│   ├── materias.php
+│   ├── calificaciones.php
+│   └── asistencias.php
 ├── public/
-│   ├── index.php
-│   ├── producto.php
-│   ├── carrito.php
-│   ├── checkout.php
-│   └── login.php
-├── config/
-│   └── database.php
-└── assets/
+│   ├── login.php
+│   ├── dashboard.php
+│   ├── calificaciones.php
+│   └── reportes.php
+├── controllers/
+├── models/
+└── assets/.
 ```
 
 ## 📦 Entregables
 - Código funcional.
-- Base de datos SQL.
-- Diagrama DER.
-- Video mostrando flujo de compra.
+- Reportes PDF.
+- Capturas por rol.
+- DER y casos de uso.
 
 ## 🪪 Nosotros
 

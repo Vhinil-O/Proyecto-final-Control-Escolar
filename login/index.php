@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=APP_URL;?>/public/dist/css/adminlte.min.css">
+<!-- SWEETALERT-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -55,6 +57,27 @@
         </div>
       </form>
     </div>
+
+    <?php
+    session_start();
+      if (isset($_SESSION['mensaje'])){
+        $mensaje =$_SESSION['mensaje'];
+        ?>
+          <script>
+            var mensaje = '<?=$mensaje?>'
+            //alert(mensaje)
+            Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "<?=$mensaje?>",
+            showConfirmButton: false,
+            timer: 3600
+          });
+          </script>
+        <?php
+        session_destroy();
+      }
+    ?>
     <!-- /.login-card-body -->
   </div>
 </div>

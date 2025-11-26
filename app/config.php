@@ -31,3 +31,5 @@ $fechaActual = date( format:'Y-m-d');
 $diaActual = date( format:'d');
 $mesActual = date( format:'m');
 $anoActual = date( format:'Y');
+
+$estadoRegistro = '1';

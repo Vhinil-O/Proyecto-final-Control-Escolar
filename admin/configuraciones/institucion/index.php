@@ -55,7 +55,9 @@
                   <tr>
                     <td><?= $contadorinstitucion; ?></td>
                     <td><?= $institucione['nombre_institucion'] ?></td>
-                    <td><?= $institucione['logo'] ?></td>
+                    <td>
+                        <img src="<?=APP_URL."/public/images/configuracion/".$institucione['logo'] ?>" width="100px"  alt="">
+                    </td>
                     <td><?= $institucione['direccion'] ?></td>
                     <td><?= $institucione['telefono'] ?></td>
                     <td><?= $institucione['celular'] ?></td>

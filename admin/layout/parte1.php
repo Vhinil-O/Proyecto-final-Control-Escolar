@@ -163,6 +163,25 @@ foreach ($sesionDatos as $sesionDato) {
             </ul>
           </li>
 
+          <li class="nav-item ">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas"><i class="bi bi-gear-fill"></i></i>
+              </i>
+              <p>
+                Configuraciones
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/configuraciones " class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Configuraciones Generales</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
 
           
           <li class="nav-item">

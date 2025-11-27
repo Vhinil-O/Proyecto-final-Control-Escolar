@@ -35,7 +35,7 @@
               <tr>
                 <th>Nro</th>
                 <th>Nombres del usuario</th>
-                <th>Rol Id</th>
+                <th>Rol</th>
                 <th>Email</th>
                 <th>Fecha de creacion</th>
                 <th>Estado</th>
@@ -63,8 +63,8 @@
                         </a>
                         <a href="edit.php?id=<?= $idUser ?>" type="button" class="btn btn-secondary btn-sm btn-success"><i class="bi bi-pencil-fill"></i>
                         </a>
-                        <form id="deleteForm<?= $idUser ?>" action="<?= APP_URL;?>/app/controllers/roles/deleteRoles.php" method="post">
-                          <input type="text" name="idRol" value="<?= $idUser ?>" hidden>
+                        <form id="deleteForm<?= $idUser ?>" action="<?= APP_URL;?>/app/controllers/usuarios/deleteUsuarios.php" method="post">
+                          <input type="text" name="idUser" value="<?= $idUser ?>" hidden>
                           <button type="button" class="btn btn-secondary btn-sm btn-danger delete-btn" style="border-radius: 0px 5px 0px" data-id="<?= $idUser ?>">
                             <i class="bi bi-trash3-fill"></i>
                           </button>

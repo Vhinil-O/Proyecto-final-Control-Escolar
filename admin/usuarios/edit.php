@@ -1,0 +1,103 @@
+<?php
+$idUser = $_GET['id'];
+
+  include '../../app/config.php';
+  include '../../admin/layout/parte1.php';
+  include '../../app/controllers/usuarios/datosUsuario.php';
+  include '../../app/controllers/roles/listadoRoles.php';
+
+?>
+
+<!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Main content -->
+     <br>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <h1>Editar Usuario: <?=$nombres;?></h1>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="card card-outline card-success">
+              <div class="card-header">
+                <h3 class="card-title">Ingrese los datos necesarios</h3>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <form action="<?= APP_URL;?>/app/controllers/usuarios/update.php" method="post">
+                    <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Nombre del rol</label>
+                            <input type="text" name="idUser" value="<?=$idUser;?>" hidden>
+                            <div class="form-inline">
+                                <select name="rol_id" id="" class="form-control">
+                                <?php
+                                    foreach ($roles as $role) { ?>
+                                        <option value="<?= $role['id_rol'];?>" <?php
+                                        if ($nombre_rol == $role['nombre_rol']) {
+                                            echo 'selected';
+                                        } ?> ><?= $role['nombre_rol'];?></option>
+                                    <?php }
+                                ?>
+                                </select>
+                                <a href="<?=APP_URL;?>/admin/roles/create.php" style="margin-left: 3px" class="btn btn-primary" ><i class="bi bi-plus-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Nombres del Usuario</label>
+                            <input type="text" name="nombres" value="<?=$nombres;?>" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="email" name="email" value="<?=$email;?>" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" name="password" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Repetir Password</label>
+                            <input type="password" name="passwordRepeat" class="form-control" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">Actualizar</button>
+                            <a href="<?=APP_URL;?>/admin/usuarios" class="btn btn-danger">Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+                </form>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          
+      </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <?php
+    include '../../admin/layout/parte2.php';
+    include '../../layout/mensajes.php';
+  ?>

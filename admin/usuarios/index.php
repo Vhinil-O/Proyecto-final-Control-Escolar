@@ -97,11 +97,7 @@
 
   <script>
   $(function () {
-    $("#example1").DataTable({
-      "pageLength": 5,
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    // Inicialización del DataTable
     $('#example2').DataTable({
       "pageLength": 5,
       "paging": true,
@@ -113,8 +109,8 @@
       "responsive": true,
     });
 
-    // SweetAlert para eliminar roles
-    $('.delete-btn').click(function() {
+    $(document).on('click', '.delete-btn', function() {
+      
       const roleId = $(this).data('id');
       
       Swal.fire({
@@ -128,7 +124,6 @@
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.isConfirmed) {
-          // Envía el formulario correspondiente
           $('#deleteForm' + roleId).submit();
         }
       });

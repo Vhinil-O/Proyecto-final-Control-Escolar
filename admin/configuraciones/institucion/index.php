@@ -1,7 +1,7 @@
 <?php
   include '../../../app/config.php';
   include '../../../admin/layout/parte1.php';
-  include '../../../app/controllers/configuraciones/institucion/listadoInstituciones.php'
+  include '../../../app/controllers/configuraciones/institucion/listadoInstituciones.php';
 
 
 ?>
@@ -47,13 +47,13 @@
             </thead>
             <tbody>
               <?php
-              $contadorInstucion = 0;
+              $contadorInstitucion = 0;
                 foreach ($instituciones as $institucione) {
                   $id_config_institucion = $institucione['id_config_institucion'];
-                  $contadorinstitucion++;
+                  $contadorInstitucion++;
                   ?>
                   <tr>
-                    <td><?= $contadorinstitucion; ?></td>
+                    <td><?= $contadorInstitucion; ?></td>
                     <td><?= $institucione['nombre_institucion'] ?></td>
                     <td>
                         <img src="<?=APP_URL."/public/images/configuracion/".$institucione['logo'] ?>" width="100px"  alt="">
@@ -70,8 +70,8 @@
                         </a>
                         <a href="edit.php?id=<?= $id_config_institucion ?>" type="button" class="btn btn-secondary btn-sm btn-success"><i class="bi bi-pencil-fill"></i>
                         </a>
-                        <form id="deleteForm<?= $id_config_institucion ?>" action="<?= APP_URL;?>/app/controllers/usuarios/deleteUsuarios.php" method="post">
-                          <input type="text" name="idUser" value="<?= $id_config_institucion ?>" hidden>
+                        <form id="deleteForm<?= $id_config_institucion ?>" action="<?= APP_URL;?>/app/controllers/configuraciones/institucion/deleteConfiguraciones.php" method="post">
+                          <input type="text" name="id_config_institucion" value="<?= $id_config_institucion ?>" hidden>
                           <button type="button" class="btn btn-secondary btn-sm btn-danger delete-btn" style="border-radius: 0px 5px 0px" data-id="<?= $id_config_institucion ?>">
                             <i class="bi bi-trash3-fill"></i>
                           </button>
@@ -104,11 +104,7 @@
 
   <script>
   $(function () {
-    $("#example1").DataTable({
-      "pageLength": 5,
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    // Inicialización del DataTable
     $('#example2').DataTable({
       "pageLength": 5,
       "paging": true,
@@ -120,8 +116,8 @@
       "responsive": true,
     });
 
-    // SweetAlert para eliminar roles
-    $('.delete-btn').click(function() {
+    $(document).on('click', '.delete-btn', function() {
+      
       const roleId = $(this).data('id');
       
       Swal.fire({
@@ -135,7 +131,6 @@
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.isConfirmed) {
-          // Envía el formulario correspondiente
           $('#deleteForm' + roleId).submit();
         }
       });

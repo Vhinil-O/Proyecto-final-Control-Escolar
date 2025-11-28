@@ -40,5 +40,3 @@
     include '../../admin/layout/parte2.php';
     include '../../layout/mensajes.php';
   ?>
-
-  

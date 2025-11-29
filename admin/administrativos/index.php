@@ -30,7 +30,7 @@ include '../../app/controllers/administrativos/listado_de_administrativos.php';
                                         <th style="text-align: center;">Nro</th>
                                         <th style="text-align: center;">Nombres del usuario</th>
                                             <th style="text-align: center;">Rol</th>
-                                        <th style="text-align: center;">C.I.</th>
+                                        <th style="text-align: center;">NUE</th>
                                         <th style="text-align: center;">Fecha de nacimiento</th>
                                         <th style="text-align: center;">Correo</th>
                                         <th style="text-align: center;">Estado</th>
@@ -48,7 +48,7 @@ include '../../app/controllers/administrativos/listado_de_administrativos.php';
                                             <td style="text-align: center;"><?= $contador_administrativo; ?></td>
                                             <td><?= $administrativo['nombres']." ".$administrativo['apellidos']; ?></td>
                                             <td><?= $administrativo['nombre_rol']; ?></td>
-                                            <td><?= $administrativo['ci']; ?></td>
+                                            <td><?= $administrativo['NUE_NUA']; ?></td>
                                             <td><?= $administrativo['fecha_nacimiento']; ?></td>
                                             <td><?= $administrativo['email']; ?></td>
                                             <td style="text-align: center;">
@@ -64,7 +64,7 @@ include '../../app/controllers/administrativos/listado_de_administrativos.php';
                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                     <a href="show.php?id=<?=$id_administrativo;?>" type="button" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                                     <a href="edit.php?id=<?=$id_administrativo;?>" type="button" class="btn btn-success btn-sm"><i class="bi bi-pencil"></i></a>
-                                                    <form action="<?=APP_URL;?>/app/controllers/administrativos/delete.php" onclick="preguntar<?=$id_administrativo;?>(event)" method="post" id="miFormulario<?=$id_administrativo;?>">
+                                                    <!--<form action="<?=APP_URL;?>/app/controllers/administrativos/delete.php" onclick="preguntar<?=$id_administrativo;?>(event)" method="post" id="miFormulario<?=$id_administrativo;?>">
                                                         <input type="text" name="id_administrativo" value="<?=$id_administrativo?>" hidden>
                                                         <button type="submit" class="btn btn-danger btn-sm" style="border-radius: 0px 5px 5px 0px;"><i class="bi bi-trash"></i></button>
                                                     </form>
@@ -87,7 +87,7 @@ include '../../app/controllers/administrativos/listado_de_administrativos.php';
                                                                 }
                                                             })
                                                         }
-                                                    </script>
+                                                    </script>-->
                                                 </div>
                                             </td>
                                         </tr>

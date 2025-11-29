@@ -9,7 +9,7 @@ if( isset($_SESSION['sesionEmail'])) {
 
   $sesionDatos = $querySesion->fetchAll(PDO::FETCH_ASSOC);
 foreach ($sesionDatos as $sesionDato) {
-    $sesionNombre = $sesionDato['nombres'];
+    $sesionNombre = $sesionDato['email'];
   }
 } else {
   //echo "El usuario hizo lo que le salio de la punta de los huevos";
@@ -125,6 +125,26 @@ foreach ($sesionDatos as $sesionDato) {
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+          <li class="nav-item ">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas"><i class="bi bi-gear-fill"></i></i>
+              </i>
+              <p>
+                Configuraciones
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/configuraciones " class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Configuraciones Generales</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
           <li class="nav-item ">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas"><i class="bi bi-person-vcard"></i>
@@ -165,23 +185,60 @@ foreach ($sesionDatos as $sesionDato) {
 
           <li class="nav-item ">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas"><i class="bi bi-gear-fill"></i></i>
+              <i class="nav-icon fas"><i class="bi bi-mortarboard"></i></i>
               </i>
               <p>
-                Configuraciones
+                Niveles
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/configuraciones " class="nav-link active">
+                <a href="<?=APP_URL;?>/admin/niveles " class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Configuraciones Generales</p>
+                  <p>Todos los niveles</p>
                 </a>
               </li>
             </ul>
           </li>
 
+          <li class="nav-item ">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas"><i class="bi bi-bar-chart-line"></i></i>
+              </i>
+              <p>
+                Grados
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/grados " class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado de grados</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item ">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas"><i class="bi bi-journal-bookmark-fill"></i></i>
+              </i>
+              <p>
+                Materias
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/materias " class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado de Materias</p>
+                </a>
+              </li>
+            </ul>
+          </li>
 
           
           <li class="nav-item">
@@ -199,4 +256,3 @@ foreach ($sesionDatos as $sesionDato) {
     </div>
     <!-- /.sidebar -->
   </aside>
-  

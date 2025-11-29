@@ -1,6 +1,6 @@
 <?php
 include '../../app/config.php';
-include '../layout/parte1.php';
+include '../../admin/layout/parte1.php';
 include '../../app/controllers/roles/listadoRoles.php';
 ?>
 <!-- Content Wrapper. Contains page content -->
@@ -30,7 +30,7 @@ include '../../app/controllers/roles/listadoRoles.php';
                                                 <select name="rol_id" id="" class="form-control">
                                                     <?php
                                                     foreach ($roles as $role) { ?>
-                                                        <option value="<?= $role['id_rol']; ?>" <?= $role['nombre_rol'] == 'DOCENTE' ? 'selected' : '' ?> disabled><?= $role['nombre_rol']; ?></option>
+                                                        <option value="<?= $role['id_rol']; ?>" <?= $role['nombre_rol'] == 'DOCENTE' ? 'selected' : '' ?>><?= $role['nombre_rol']; ?></option>
                                                     <?php
                                                     }
                                                     ?>

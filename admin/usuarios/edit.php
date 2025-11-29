@@ -15,7 +15,7 @@ $idUser = $_GET['id'];
     <div class="content">
       <div class="container">
         <div class="row">
-          <h1>Editar Usuario: <?=$nombres;?></h1>
+          <h1>Editar Usuario: <?=$email;?></h1>
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -45,12 +45,6 @@ $idUser = $_GET['id'];
                                 </select>
                                 <a href="<?=APP_URL;?>/admin/roles/create.php" style="margin-left: 3px" class="btn btn-primary" ><i class="bi bi-plus-lg"></i></a>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="">Nombres del Usuario</label>
-                            <input type="text" name="nombres" value="<?=$nombres;?>" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-4">

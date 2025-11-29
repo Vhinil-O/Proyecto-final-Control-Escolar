@@ -42,12 +42,6 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Nombres del Usuario</label>
-                            <input type="text" name="nombres" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
                             <label for="">Email</label>
                             <input type="email" name="email" class="form-control" required>
                         </div>

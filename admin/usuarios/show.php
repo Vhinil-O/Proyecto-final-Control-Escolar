@@ -13,7 +13,7 @@ $idUser = $_GET['id'];
     <div class="content">
       <div class="container">
         <div class="row">
-          <h1>Usuario: <?=$nombres;?></h1>
+          <h1>Usuario: <?=$email;?></h1>
       </div>
       <div class="row">
         <div class="col-md-12">
@@ -29,12 +29,6 @@ $idUser = $_GET['id'];
                         <div class="form-group">
                             <label for="">Nombre del rol</label>
                             <p><?=$nombre_rol;?></p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="">Nombres del Usuario</label>
-                            <p><?=$nombres?></p>
                         </div>
                     </div>
                     <div class="col-md-3">

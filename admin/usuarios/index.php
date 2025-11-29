@@ -34,7 +34,6 @@
             <thead>
               <tr>
                 <th>Nro</th>
-                <th>Nombres del usuario</th>
                 <th>Rol</th>
                 <th>Email</th>
                 <th>Fecha de creacion</th>
@@ -52,7 +51,6 @@
                   ?>
                   <tr>
                     <td><?= $contadorUser; ?></td>
-                    <td><?= $usuario['nombres'] ?></td>
                     <td><?= $usuario['nombre_rol'] ?></td>
                     <td><?= $usuario['email'] ?></td>
                     <td><?= $usuario['fyh_creacion'] ?></td>

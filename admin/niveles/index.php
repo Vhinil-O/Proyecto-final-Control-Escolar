@@ -67,12 +67,12 @@
                         </a>
                         <a href="edit.php?id=<?= $id_nivel ?>" type="button" class="btn btn-secondary btn-sm btn-success"><i class="bi bi-pencil-fill"></i>
                         </a>
-                      <form id="deleteForm<?= $id_nivel ?>" action="<?= APP_URL;?>/app/controllers/niveles/deleteNiveles.php" method="post">
+                      <!--<form id="deleteForm<?= $id_nivel ?>" action="<?= APP_URL;?>/app/controllers/niveles/deleteNiveles.php" method="post">
                           <input type="text" name="id_nivel" value="<?= $id_nivel ?>" hidden>
                           <button type="button" class="btn btn-secondary btn-sm btn-danger delete-btn" style="border-radius: 0px 5px 0px" data-id="<?= $id_nivel ?>">
                             <i class="bi bi-trash3-fill"></i>
                           </button>
-                        </form>
+                        </form>-->
                       </div>
                     </td>
                   </tr>

@@ -3,6 +3,12 @@
   include '../admin/layout/parte1.php';
   include '../app/controllers/roles/listadoRoles.php';
   include '../app/controllers/usuarios/listadoUsuarios.php';
+  include '../app/controllers/niveles/listadoNiveles.php';
+  include '../app/controllers/grados/listado_de_grados.php';
+  include '../app/controllers/materias/listado_de_materias.php';
+  include '../app/controllers/administrativos/listado_de_administrativos.php';
+  include '../app/controllers/docentes/listado_de_docentes.php';
+  include '../app/controllers/estudiantes/listado_de_estudiantes.php';
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -58,6 +64,138 @@
               </a>
             </div>
           </div>
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <?php
+                  $contadorNiveles = 0;
+                  foreach ($niveles as $nivele) {
+                    $contadorNiveles++;
+                  }
+                ?>
+                <h3><?=$contadorNiveles;?></h3>
+                <p>Niveles registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-mortarboard"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/niveles" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <?php
+                  $contadorGrados = 0;
+                  foreach ($grados as $grado) {
+                    $contadorGrados++;
+                  }
+                ?>
+                <h3><?=$contadorGrados;?></h3>
+                <p>Grados registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-bar-chart-line"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/grados" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <?php
+                  $contadorMaterias = 0;
+                  foreach ($materias as $materia) {
+                    $contadorMaterias++;
+                  }
+                ?>
+                <h3><?=$contadorMaterias;?></h3>
+                <p>Materias registradas</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-journal-bookmark-fill"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/materias" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-dark">
+              <div class="inner">
+                <?php
+                  $contadoradministrativos = 0;
+                  foreach ($administrativos as $administrativo) {
+                    $contadoradministrativos++;
+                  }
+                ?>
+                <h3><?=$contadoradministrativos;?></h3>
+                <p>Administrativos registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-person-gear"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/administrativos" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-default">
+              <div class="inner">
+                <?php
+                  $contadordocentes = 0;
+                  foreach ($docentes as $docente) {
+                    $contadordocentes++;
+                  }
+                ?>
+                <h3><?=$contadordocentes;?></h3>
+                <p>Docentes registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-person-video3"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/docentes" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div> 
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+              <div class="inner">
+                <?php
+                  $contadorestudiantes = 0;
+                  foreach ($estudiantes as $estudiante) {
+                    $contadorestudiantes++;
+                  }
+                ?>
+                <h3><?=$contadorestudiantes;?></h3>
+                <p>Estudiantes registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-tencent-qq"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/estudiantes" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
+
       </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->

@@ -162,23 +162,36 @@ CREATE TABLE estudiantes (
   id_estudiante             INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   persona_id             INT (11) NOT NULL,
 
-  fyh_creacion   DATETIME NULL,
-  fyh_actualizacion DATETIME NULL,
-  estado        VARCHAR (11),
+  nivel_id INT (11) NOT NULL,
+  grado_id INT (11) NOT NULL,
+  rude VARCHAR (50) NOT NULL,
 
-  FOREIGN KEY (persona_id) REFERENCES personas (id_persona) on delete no action on update cascade
+  fyh_creacion DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado VARCHAR (11),
+
+  FOREIGN KEY (persona_id) REFERENCES personas (id_persona) on delete no action on update cascade,
+  FOREIGN KEY (nivel_id) REFERENCES niveles (id_nivel) on delete no action on update cascade,
+  FOREIGN KEY (grado_id) REFERENCES grados (id_grado) on delete no action on update cascade
 
 )ENGINE=InnoDB;
 
 CREATE TABLE ppffs (
 
-  id_ppff             INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  persona_id             INT (11) NOT NULL,
+  id_ppff INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  estudiante_id INT (11) NOT NULL,
+  nombres_apellidos_ppff VARCHAR (100) NOT NULL,
+  ci_ppff VARCHAR (20) NOT NULL,
+  celular_ppff VARCHAR (20) NOT NULL,
+  ocupacion_ppff VARCHAR (50) NOT NULL,
+  ref_nombre VARCHAR (50) NOT NULL,
+  ref_parentesco VARCHAR (50) NOT NULL,
+  ref_celular VARCHAR (20) NOT NULL,
 
-  fyh_creacion   DATETIME NULL,
+  fyh_creacion DATETIME NULL,
   fyh_actualizacion DATETIME NULL,
-  estado        VARCHAR (11),
+  estado VARCHAR (11),
 
-  FOREIGN KEY (persona_id) REFERENCES personas (id_persona) on delete no action on update cascade
+  FOREIGN KEY (estudiante_id) REFERENCES estudiantes (id_estudiante) on delete no action on update cascade
 
 )ENGINE=InnoDB;

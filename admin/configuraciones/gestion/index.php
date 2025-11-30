@@ -3,7 +3,12 @@
   include '../../../admin/layout/parte1.php';
   include '../../../app/controllers/configuraciones/gestion/listadoGestiones.php';
 
-
+if ($rol_usuario_sesion != 1) {
+    //echo "No tienes permisos para ver esta página.";
+    // Opcional: Redirigirlo a su panel correspondiente
+    header('Location: '.APP_URL.'/login'); 
+    exit;
+}
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -65,12 +70,12 @@
                         </a>
                         <a href="edit.php?id=<?= $id_gestion ?>" type="button" class="btn btn-secondary btn-sm btn-success"><i class="bi bi-pencil-fill"></i>
                         </a>
-                        <form id="deleteForm<?= $id_gestion ?>" action="<?= APP_URL;?>/app/controllers/configuraciones/institucion/deleteConfiguraciones.php" method="post">
+                      <!--  <form id="deleteForm<?= $id_gestion ?>" action="<?= APP_URL;?>/app/controllers/configuraciones/institucion/deleteConfiguraciones.php" method="post">
                           <input type="text" name="id_config_institucion" value="<?= $id_gestion ?>" hidden>
                           <button type="button" class="btn btn-secondary btn-sm btn-danger delete-btn" style="border-radius: 0px 5px 0px" data-id="<?= $id_gestion ?>">
                             <i class="bi bi-trash3-fill"></i>
                           </button>
-                        </form>
+                        </form>-->
                       </div>
                     </td>
                   </tr>

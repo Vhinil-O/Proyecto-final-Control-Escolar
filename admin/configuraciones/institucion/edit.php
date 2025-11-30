@@ -4,7 +4,13 @@ $id_config_institucion = $_GET['id'];
   include '../../../app/config.php';
   include '../../../admin/layout/parte1.php';
 
-  include '../../../app/controllers/configuraciones/institucion/datosInstitucion.php'
+  include '../../../app/controllers/configuraciones/institucion/datosInstitucion.php';
+  if ($rol_usuario_sesion != 1) {
+    //echo "No tienes permisos para ver esta página.";
+    // Opcional: Redirigirlo a su panel correspondiente
+    header('Location: '.APP_URL.'/login'); 
+    exit;
+}
 ?>
 
 <!-- Content Wrapper. Contains page content -->

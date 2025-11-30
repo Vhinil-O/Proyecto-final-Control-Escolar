@@ -1,7 +1,16 @@
 <?php
+
+$id_materia = $_GET['id'];
 include '../../app/config.php';
 include '../../admin/layout/parte1.php';
 
+include '../../app/controllers/materias/datos_materia.php';
+if ($rol_usuario_sesion != 1) {
+    //echo "No tienes permisos para ver esta página.";
+    // Opcional: Redirigirlo a su panel correspondiente
+    header('Location: '.APP_URL.'/login'); 
+    exit;
+}
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -10,23 +19,24 @@ include '../../admin/layout/parte1.php';
     <div class="content">
         <div class="container">
             <div class="row">
-                <h1>Registro de una nueva materia</h1>
+                <h1>Modificar materia: <?=$nombre_materia;?></h1>
             </div>
             <br>
             <div class="row">
 
                 <div class="col-md-6">
-                    <div class="card card-outline card-primary">
+                    <div class="card card-outline card-success">
                         <div class="card-header">
                             <h3 class="card-title">Llene los datos</h3>
                         </div>
                         <div class="card-body">
-                            <form action="<?=APP_URL;?>/app/controllers/materias/create.php" method="post">
+                            <form action="<?=APP_URL;?>/app/controllers/materias/update.php" method="post">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
+                                            <input type="text" name="id_materia" value="<?=$id_materia;?>" hidden>
                                             <label for="">Materia</label>
-                                            <input type="text" name="nombre_materia" class="form-control" required>
+                                            <input type="text" value="<?=$nombre_materia;?>" name="nombre_materia" class="form-control" required>
                                         </div>
                                     </div>
                                 </div>
@@ -34,7 +44,7 @@ include '../../admin/layout/parte1.php';
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary">Registrar</button>
+                                            <button type="submit" class="btn btn-success">Actualizar</button>
                                             <a href="<?=APP_URL;?>/admin/materias" class="btn btn-secondary">Cancelar</a>
                                         </div>
                                     </div>

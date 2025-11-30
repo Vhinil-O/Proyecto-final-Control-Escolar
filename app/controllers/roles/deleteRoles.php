@@ -29,3 +29,11 @@ if ($sentencia->execute()) {
     $_SESSION['icono'] = "error";
     header(header: 'Location:'.APP_URL."/admin/roles");
 }
+
+    
+
+
+
+
+
+

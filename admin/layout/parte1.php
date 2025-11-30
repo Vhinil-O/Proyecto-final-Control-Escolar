@@ -8,9 +8,14 @@ if( isset($_SESSION['sesionEmail'])) {
   $querySesion->execute();
 
   $sesionDatos = $querySesion->fetchAll(PDO::FETCH_ASSOC);
+  $rol_usuario_sesion = null;
+
 foreach ($sesionDatos as $sesionDato) {
     $sesionNombre = $sesionDato['email'];
+    $rol_usuario_sesion = $sesionDato['rol_id'];
   }
+  //echo $rol_usuario_sesion;
+
 } else {
   //echo "El usuario hizo lo que le salio de la punta de los huevos";
   header(header: 'Location:'.APP_URL."/login");

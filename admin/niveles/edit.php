@@ -4,7 +4,13 @@ $id_nivel =$_GET['id'];
   include '../../admin/layout/parte1.php';
 
   include '../../app/controllers/niveles/datosNivel.php';
-  include '../../app/controllers/configuraciones/gestion/listadoGestiones.php'
+  include '../../app/controllers/configuraciones/gestion/listadoGestiones.php';
+  if ($rol_usuario_sesion != 1) {
+    //echo "No tienes permisos para ver esta página.";
+    // Opcional: Redirigirlo a su panel correspondiente
+    header('Location: '.APP_URL.'/login'); 
+    exit;
+}
 ?>
 
 <!-- Content Wrapper. Contains page content -->

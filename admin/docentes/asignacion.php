@@ -6,6 +6,12 @@ include '../../app/controllers/niveles/listadoNiveles.php';
 include '../../app/controllers/grados/listado_de_grados.php';
 include '../../app/controllers/materias/listado_de_materias.php';
 include '../../app/controllers/docentes/listado_de_asignaciones.php';
+if ($rol_usuario_sesion != 1) {
+    //echo "No tienes permisos para ver esta página.";
+    // Opcional: Redirigirlo a su panel correspondiente
+    header('Location: '.APP_URL.'/login'); 
+    exit;
+}
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">

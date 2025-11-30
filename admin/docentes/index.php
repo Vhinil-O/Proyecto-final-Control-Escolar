@@ -2,6 +2,12 @@
 include '../../app/config.php';
 include '../layout/parte1.php';
 include '../../app/controllers/docentes/listado_de_docentes.php';
+if ($rol_usuario_sesion != 1) {
+    //echo "No tienes permisos para ver esta página.";
+    // Opcional: Redirigirlo a su panel correspondiente
+    header('Location: '.APP_URL.'/login'); 
+    exit;
+}
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">

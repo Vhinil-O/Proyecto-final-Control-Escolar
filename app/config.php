@@ -7,8 +7,8 @@ define('BD','KARDEX_by_DIEGO');
 define('PUERTO','8889');   
 
 //API Y GENERALES
-define('APP_NAME','SISTEMA DE GESTION PROPIO');
-define('APP_URL','http://localhost:8888/KARDEX_by_DIEGO');
+define('APP_NAME','SISTEMA DE GESTION PARA CONTROL ESCOLAR');
+define('APP_URL','http://localhost:8888/proyecto-final-Control-Escolar/');
 //SUEÑOOS
 define('KEY_API_MAPS',''); //A un futuro para incluir maps como api
 
